@@ -7,6 +7,9 @@ const app = express();
 
 app.use(express.json());
 
+const bookRoutes = require("./routes/bookRoutes");
+app.use("/books", bookRoutes);
+
 //start server
 app.listen(port, () => {
   console.log(`Listening to port: ${port}`);
