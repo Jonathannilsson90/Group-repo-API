@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 
 exports.registerUser = async (req, res) => {
   try {
-    const hashedPassword = await bcrypt.hash(req.body.passowrd, 10);
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
     const user = new User({
       username: req.body.username,
@@ -12,15 +12,14 @@ exports.registerUser = async (req, res) => {
     });
     await user.save();
     res.status(200).json({
-      Message: `You just got registered! Welcome.`,
-      username: req.body.username,
+      Message: `You just got registered! Welcome.`, username: req.body.username
     });
   } catch (error) {
     res.status(400).json({ Message: error });
   }
 };
 
-exports.generateAcessToken = async (req, res) => {
+exports.generateAccessToken = async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username });
     const isPasswordValid = await bcrypt.compare(

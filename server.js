@@ -23,7 +23,7 @@ app.use(express.json());
 const bookRoutes = require("./routes/bookRoutes");
 app.use("/books", verificationToken, bookRoutes);
 
-const userRoutes = require("./routes/userRoutes");
+const userRoutes = require('./routes/userRoutes');
 app.use("/users", userRoutes);
 
 function verificationToken (req,res,next){
@@ -33,7 +33,7 @@ function verificationToken (req,res,next){
   if (!token) {
     return res.status(401);
   }
-  jwt.verify(token, process.env.ACCESS_SECRET_TOKEN, (error,user) =>{
+  jwt.verify(token, process.env.ACCESS_SECRET_TOKEN, (error, user) =>{
     if(error) {
       return res.status(403);
     }
