@@ -23,8 +23,24 @@ app.use(express.json());
 const bookRoutes = require("./routes/bookRoutes");
 app.use("/books", verificationToken, bookRoutes);
 
-const userRoutes = require("./routes/userRoutes.js");
+const userRoutes = require("./routes/userRoutes");
 app.use("/users", userRoutes);
+
+function verificationToken (req,res,next){
+  const bearer = req.headers["authorization"];
+  const token = bearer && bearer.split(" ")[1];
+
+  if (!token) {
+    return res.status(401);
+  }
+  jwt.verify(token, process.env.ACCESS_SECRET_TOKEN, (error,user) =>{
+    if(error) {
+      return res.status(403);
+    }
+
+    next();
+  })
+}
 
 ///Server start-up with mongoose connection and localhost
 
