@@ -1,5 +1,8 @@
+/// Importing models from Bookdmodel folder
 const book = require("../models/Bookmodel");
-
+/// desc    Get All books
+/// route   GET /books/
+/// access  Private
 const getAllBooks = async (req, res) => {
   try {
     res.json(await book.find());
@@ -7,7 +10,9 @@ const getAllBooks = async (req, res) => {
     console.log({ message: error });
   }
 };
-
+/// desc    Get specific book
+/// route   GET /books/:bookId
+/// access  Private
 const getBook = async (req, res) => {
   try {
     res.json(await book.findById());
@@ -15,7 +20,9 @@ const getBook = async (req, res) => {
     console.log({ message: error });
   }
 };
-
+/// desc    Post new book
+/// route   POST /books/
+/// access  Private
 const postBook = async (req, res) => {
   try {
     const createBook = new book({
@@ -31,7 +38,9 @@ const postBook = async (req, res) => {
     console.log({ message: error });
   }
 };
-
+/// desc    Delete book by Id
+/// route   DELETE /books/:bookId
+/// access  Private
 const deleteBook = async (req, res) => {
   try {
     res.json(await book.deleteOne({ _id: req.params.bookId }));
@@ -39,7 +48,9 @@ const deleteBook = async (req, res) => {
     res.json({ message: error });
   }
 };
-
+/// desc    Update new book
+/// route   PUT /books/:bookId
+/// access  Private
 const updateBook = async (req, res) => {
   try {
     res.json(

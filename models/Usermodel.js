@@ -1,5 +1,6 @@
+/// Re-declaring mongoose npm package to initialze the Schema
 const mongoose = require('mongoose')
-
+///The DB save content according to this Schema below:
 const userSchema = mongoose.Schema({
     username: {
         type: String,
