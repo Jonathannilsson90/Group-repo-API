@@ -1,31 +1,31 @@
 const mongoose = require("mongoose");
 
 const bookSchema = mongoose.Schema({
-  Title: {
+  title: {
     type: String,
     required: true,
   },
-  Desciption: {
+  description: {
     type: String,
     required: true,
   },
-  Price: {
+  price: {
     type: Number,
     required: true,
   },
-  Stock: {
+  stock: {
     type: Number,
     required: true,
   },
-  Image: {
+  image: {
     type: String,
     required: false,
   },
-  Category: {
+  category: {
     type: Array,
     required: false,
   },
-  Date: {
+  date: {
     type: Date,
     default: Date.now,
   },
