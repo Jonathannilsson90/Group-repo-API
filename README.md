@@ -73,7 +73,7 @@ PATCH:  https://group-repo-api-production.up.railway.app/books/ ***id*** <br>
 
 |Name: |Github:    |
 |-----------------|-----------| 
-|Yulia Gutorova   |[yulia-gutorova](https://github.comyulia-gutorova)           |
+|Yulia Gutorova   |[yulia-gutorova](https://github.com/yulia-gutorova)           |
 |Viktor Ceder     |[viktor472](https://github.com/viktor472)                    |
 |Robin Raczkiewicz|[Robinrac](https://github.com/Robinrac)                      |           
 |Jonathan Nilsson |[Jonathannilsson90](https://github.com/Jonathannilsson90/)   |           
