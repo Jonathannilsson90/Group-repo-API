@@ -15,7 +15,7 @@ const getAllBooks = async (req, res) => {
 /// access  Private
 const getBook = async (req, res) => {
   try {
-    res.json(await book.findById());
+    res.json(await book.findOne({ _id: req.params.bookId }));
   } catch (error) {
     console.log({ message: error });
   }
