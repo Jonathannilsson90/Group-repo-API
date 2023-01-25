@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const app = express();
 
 /// .env processes
-const port = process.env.PORT || 5000;
+const port = process.env.PORT
 
 /// Middleware declaclaration
 const helmet = require("helmet");
