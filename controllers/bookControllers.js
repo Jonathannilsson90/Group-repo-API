@@ -63,6 +63,7 @@ const updateBook = async (req, res) => {
             price: req.body.price,
             stock: req.body.stock,
             category: req.body.category,
+            image: req.body.image,
           },
         }
       )
